@@ -1,4 +1,4 @@
-module github.com/leeliliang/consistenHashWorker
+module github.com/leeliliang/consistentHashWorker
 
 go 1.23.1
 
