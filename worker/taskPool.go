@@ -44,7 +44,7 @@ func (wp *WorkerPool) worker(workerID string) {
 	wp.logger.Debug("task", zap.String("workerID", workerID))
 	defer wp.wg.Done()
 	for task := range wp.tasks[workerID] {
-		wp.logger.Debug("task", zap.String("workerID", workerID), zap.String("task", string(task.Data)))
+		wp.logger.Debug("task", zap.String("workerID", workerID))
 		err := task.HandlerMessage()
 		if err != nil {
 			wp.logger.Error("Failed to process record message", zap.Error(err))
